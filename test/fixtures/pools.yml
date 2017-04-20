@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  our_pool: MyString
+  our_install_date: MyString
+  pool_type: MyString
+  pool_mfg: MyString
+  pool_model: MyString
+  pool_finish: MyString
+  pool_size: MyString
+  filter_type: MyString
+  filter_mfg: MyString
+  filter_model: MyString
+  pump_type: MyString
+  pump_mfg: MyString
+  pump_model: MyString
+  heater_type: MyString
+  heater_mfg: MyString
+  heater_model: MyString
+  winter_cover_type: MyString
+  service_history: MyString
+
+two:
+  our_pool: MyString
+  our_install_date: MyString
+  pool_type: MyString
+  pool_mfg: MyString
+  pool_model: MyString
+  pool_finish: MyString
+  pool_size: MyString
+  filter_type: MyString
+  filter_mfg: MyString
+  filter_model: MyString
+  pump_type: MyString
+  pump_mfg: MyString
+  pump_model: MyString
+  heater_type: MyString
+  heater_mfg: MyString
+  heater_model: MyString
+  winter_cover_type: MyString
+  service_history: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_service_call_date: 2017-04-20
+  customer_complaint: MyText
+  customer_id: 1
+  pool_id: 1
+  inventory_req: MyText
+  type: 
+  duration_est: 1
+
+two:
+  scheduled_service_call_date: 2017-04-20
+  customer_complaint: MyText
+  customer_id: 1
+  pool_id: 1
+  inventory_req: MyText
+  type: 
+  duration_est: 1

@@ -3,37 +3,35 @@ SWIMMING POOL CENTER - protoype
 
 Home  Above Ground Pools  Hot Tubs  Services  Gallery  About Us  Request A Quote  Financing  Locations
 info@spcpools.com
-
-ModelName:
-relationships:
-columns:
-notes:
---------------------------------------------------------
-
-
---------------------------------------------------------
-Location
-  name, address, city, state, zip, phone
-
-  603 S. Union St.  Lawrence,   MA 01843  978-682-6916
-  138 Route 111,    Hampstead,  NH 03841  603-329-4001
+RBCK Enterprises, Inc.
+ 
 --------------------------------------------------------   
 Inventory
-  sku, name, qty, category, sub-category, location_id 
-  ex: sku: "123", "filter", "6", "filters", "medium-sized", "3"
+  sku, name, mfg, type, model, size, color, category, sub-category, qty, location
 
-  Inventory
-  location: Lawrence, Hampstead 
-  loaded_on: truck_id
-  date_loaded:
-  date_used/sold:
-  status: for_sale, sold, damaged, missing, free-to-customer
+  status: 4sale, sold, damaged, missing, freebie-loss
+  location: default: 'Lawrence'
+
+Locations  (pundit, enumerated list, in the Inventory table)
+  603 S. Union St.  Lawrence,   MA 01843  978-682-6916
+  138 Route 111,    Hampstead,  NH 03841  603-329-4001
+  truck_id: 1
+  truck_id: 2
+  truck_id: 3
+  truck_id: 4
+  truck_id: 5
+  truck_id: 6
+  truck_id: 7
+
+  Lawrence, Hampstead, truck1, truck2, etc..7
+  a = Lawrence
+  b = Hampstead
+  1-7 = truck
 
 -------------------------------------------------------- 
 Truck 
-  id, name, make, model, year, equipment (crane, moffit, winch, welder, etc.)
-  truck_type, capacity, constraints, driver
-  
+  name, make, model, year, equipment (crane, moffit, winch, welder, etc.)
+
   has_many :work_orders
   has_many :service_calls
   
@@ -43,6 +41,7 @@ Truck
         --sticker label 
         --bar code
         --camera picture
+          (phone app should wizard through taking and capturing a picture in database)
 
       truck_inventory
         inv_assigned 
@@ -56,16 +55,21 @@ Customer
   contact fields, directions
   full_name1, first_name1, last_name1, 
   full_name2, first_name2, last_name2, 
-  address, city, state, zip, primary_phone, other_phone
+  address, city, state, zip, phone1, phone2, email1, email2
+  contact_about
+  contact_history
+  
+  has_many :work_orders
+  has_many :service_calls
 
 --------------------------------------------------------
 Pool
-  our_pool,
+  our_pool(boolean),
     our_install_date,
   pool_type,
-  pool_finish,
   pool_mfg,
   pool_model,
+  pool_finish,
   pool_size,
 
   filter_type,
@@ -82,30 +86,29 @@ Pool
   
   winter_cover_type,
 
-  notes,
-    installation_history
-      who?, did what?, when?, result?
-    service_history
-      who?, did what?, when?, result?
+  service_history
+    who?, did what?, when?, result?
  
+  belongs_to :customer
+
+
 --------------------------------------------------------
 WorkOrder
-  customer_id, pool_id, inventory_required, inventory_used, customer_complaint, scheduled_service_call_date
+service_call_date customer_complaint customer_id:integer pool_id:integer inventory_req work_order_type duration_est:integer
+  
 
-  wo_type: estimate, pool_opening, pool_closing, pool_cleaning_service, service_call, call_back 
-  wo_duration_est
-  wo_duration_act
+  work_order_type: estimate, pool_opening, pool_closing, pool_cleaning_service, service_call, call_back 
+  work_order_duration_est:integer (estimated time required, note, actual is tracked via ServiceCall)
 
-  wo_type          wo_duration_est  wo_duration_act
-  service_call     .5               1.5 (driver track, or app checkin 'updated_at')
-  pool_opening     2.0
-  pool_closing     2.0
-  call_back        1.0
-  pool_cleaning    3.0
-  estimate         1
+  work_order_type          work_order_duration_est    work_order_duration_act
+  service_call            .5                          1.5 (driver track, or app checkin 'updated_at')
+  pool_opening            2.0
+  pool_closing            2.0
+  call_back               1.0
+  pool_cleaning           3.0
+  estimate                1
 
-
-Forms:
+WorkOrder(views):
   form_service_call
   form_pool_opening
   form_pool_closing
@@ -113,25 +116,14 @@ Forms:
   form_pool_cleaning_service
   form_estimate
  
---------------------------------------------------------
-Employee
-  full_name, fname, lname, email, phone, title
-  has_many :schedules
-
-  history
-    feedback
-    drove which truck, which day
-  *role
-    driver
-    helper
-    crew foreman
+  belongs_to :customer
 
 --------------------------------------------------------
-TruckSchedule
-  employee_id, truck_id, customer_id, inventory_list
+TruckServiceCall
+ truck_id, service_call_id
   
-  has_many :work_orders
-  has_many :appointments
+ belongs_to :truck
+ belongs_to :service_call
  
 def schedule_truck(truck_id)
   truck = Truck.find(truck_id)
@@ -145,26 +137,43 @@ def schedule_truck(truck_id)
   end of each service call, driver records total "wo_duration_act"
 
   NO BLAME - NO SHAME (encourage honest reporting)
+
 --------------------------------------------------------
+Employee
+  full_name, fname, lname, email, phone, title
 
-ApptSchedule
-  
+  has_many :employee_service_calls
+  has_many :service_calls, through: :employee_service_calls
 
-relationships:
-columns:
-notes:
+  history
+    feedback
+    drove which truck, which day
+    *role:(driver, helper, crew foreman)
+
 --------------------------------------------------------
+EmployeeServiceCall
+  service_call_id
+  employee_id
 
+  belongs_to :service_call
+  belongs_to :employee
+
+--------------------------------------------------------
 ServiceCall
-  sched_date, start_est, start_act, end_est, end_act, work_order_id, truck_id
+  scheduled_service_call_date, 
+  start_time_est, 
+  start_time_act, 
+  end_time_est, 
+  end_time_act,
+  customer_id,
+  work_order_id, 
+  truck_id
 
   belongs_to :truck
   belongs_to :work_order
+  has_many :employees
 
-  has_many :service_call_employees
-  has_many :employees, through: :service_call_employees
-
-
+--------------------------------------------------------
 Schedule
   various views of ServiceCalls and related view/details
   an index view: /services
@@ -184,7 +193,6 @@ Schedule
       wo_id: 2
         inventory_list
 
-
               mon       tue       wed       thu       fri       sat       sun
   truck1
     wo_id1    8:00am    8:00am    8:00am    8:00am    8:00am    8:00am
@@ -200,6 +208,9 @@ Schedule
     wo_id7    8:00am    8:00am    8:00am    8:00am    8:00am    8:00am
     wo_id8    9:00am    9:00am    9:00am    9:00am    9:00am    9:00am
     wo_id9    10:00am   10:00am   10:00am   10:00am   10:00am   10:00am
+
+--------------------------------------------------------
+ 
 
 #############################################################
 Questions:

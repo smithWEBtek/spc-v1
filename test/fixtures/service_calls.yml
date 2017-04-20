@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_service_call_date: MyString
+  start_time_est: MyString
+  start_time_act: MyString
+  end_time_est: MyString
+  end_time_act: MyString
+  customer_id: MyString
+  work_order_id: MyString
+  truck_id: MyString
+
+two:
+  scheduled_service_call_date: MyString
+  start_time_est: MyString
+  start_time_act: MyString
+  end_time_est: MyString
+  end_time_act: MyString
+  customer_id: MyString
+  work_order_id: MyString
+  truck_id: MyString

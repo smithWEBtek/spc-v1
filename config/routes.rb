@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'static#home'
+  resources :service_calls, :employee_service_calls, :employees, :truck_service_calls, :work_orders, :pools, :customers, :trucks, :inventories
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+ end

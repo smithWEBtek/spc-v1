@@ -1,0 +1,2 @@
+module TruckServiceCallsHelper
+end
