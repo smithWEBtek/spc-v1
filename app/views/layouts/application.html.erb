@@ -3,13 +3,30 @@
   <head>
     <title>SpcV1</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   </head>
-
   <body>
-    <%= yield %>
+    <div style="margin: 2%">
+      <div class="nav-bar">
+        <h3>
+        <%= link_to "customers", customers_path %> |
+        <%= link_to "pools", pools_path %> |
+        <%= link_to "trucks", trucks_path %> |
+        <%= link_to "employees", employees_path %> |
+        <%= link_to "service calls", service_calls_path %> |
+        <%= link_to "inventories", inventories_path %>
+        <hr>
+        </h3>
+      <div class="row-fluid">
+        <%= yield %>
+      </div>
+        
+      </div>
+    </div>
+    <div class="flash-style">
+      <p><%= notice %><%= alert %></p>
+    </div>
+  </div>
   </body>
 </html>

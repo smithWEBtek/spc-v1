@@ -1,0 +1,13 @@
+<% @service_calls.each do |service_call| %>
+  
+<%= service_call.scheduled_service_call_date %><br>
+<%= service_call.start_time_est %><br>
+<%= service_call.start_time_act %><br>
+<%= service_call.end_time_est %><br>
+<%= service_call.end_time_act %><br>
+<%= service_call.customer_id %><br>
+<%= service_call.work_order_id %><br>
+<%= service_call.truck_id %><br>
+___________________________________<br>
+
+<% end %>
