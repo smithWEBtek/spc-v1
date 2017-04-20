@@ -1,6 +1,7 @@
 class CreatePools < ActiveRecord::Migration[5.0]
   def change
     create_table :pools do |t|
+      t.integer :customer_id
       t.boolean :our_pool
       t.date :our_install_date
       t.string :pool_type

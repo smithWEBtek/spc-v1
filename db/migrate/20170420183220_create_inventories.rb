@@ -4,7 +4,7 @@ class CreateInventories < ActiveRecord::Migration[5.0]
       t.string :sku
       t.string :name
       t.string :mfg
-      t.string :type
+      t.string :part_type
       t.string :model
       t.string :size
       t.string :color

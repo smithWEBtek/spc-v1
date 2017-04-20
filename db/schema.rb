@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420190519) do
+ActiveRecord::Schema.define(version: 20170420210937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20170420190519) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "full_name"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "fname"
+    t.string   "lname"
     t.string   "email"
     t.string   "phone"
     t.string   "title"
@@ -54,11 +54,16 @@ ActiveRecord::Schema.define(version: 20170420190519) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "imports", force: :cascade do |t|
+    t.string "file_name"
+    t.string "model"
+  end
+
   create_table "inventories", force: :cascade do |t|
     t.string   "sku"
     t.string   "name"
     t.string   "mfg"
-    t.string   "type"
+    t.string   "part_type"
     t.string   "model"
     t.string   "size"
     t.string   "color"
@@ -71,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170420190519) do
   end
 
   create_table "pools", force: :cascade do |t|
+    t.integer  "customer_id"
     t.boolean  "our_pool"
     t.date     "our_install_date"
     t.string   "pool_type"

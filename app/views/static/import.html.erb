@@ -1,0 +1,12 @@
+
+
+<%= form_for @import, import_csv_path do |f| %>
+  <%= f.label :model %><br>
+  <%= f.text_field :model %><br><br>
+
+  <%= f.label :file_name %><br>
+  <%= f.text_field :file_name %><br><br>
+  
+  <%= f.submit %>
+  
+<% end %>
