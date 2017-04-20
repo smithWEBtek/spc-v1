@@ -5,6 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'yaml_db'
+gem 'rails-erd'
+gem 'pdf-reader'
+gem 'cloudinary'
+gem 'watir'
+gem 'nokogiri', '>=1.5.9'
+gem 'httparty'
+gem 'pygments.rb', '~> 0.6.0'
+gem 'redcarpet', '~> 3.2.2'
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
