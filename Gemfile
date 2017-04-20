@@ -15,6 +15,8 @@ gem 'httparty'
 gem 'pygments.rb', '~> 0.6.0'
 gem 'redcarpet', '~> 3.2.2'
 gem 'pry'
+gem 'bootstrap-sass'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
