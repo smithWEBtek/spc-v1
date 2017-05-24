@@ -33,7 +33,8 @@ Truck
   name, make, model, year, equipment (crane, moffit, winch, welder, etc.)
 
   has_many :work_orders
-  has_many :service_calls
+  has_many :truck_service_calls
+	has_many :service_calls, through: :truck_service_calls
   
 
     TRUCK_INVENTORY
@@ -166,12 +167,13 @@ ServiceCall
   end_time_est, 
   end_time_act,
   customer_id,
-  work_order_id, 
-  truck_id
+  work_order_id
 
   belongs_to :truck
   belongs_to :work_order
   has_many :employees
+  has_many :truck_service_calls
+	has_many :trucks, through: :truck_service_calls
 
 --------------------------------------------------------
 Schedule

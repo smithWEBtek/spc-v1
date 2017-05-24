@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :service_histories
   root 'static#home'
   get '/import', to: 'static#new_import'
 

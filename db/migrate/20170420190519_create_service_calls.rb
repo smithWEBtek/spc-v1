@@ -8,7 +8,6 @@ class CreateServiceCalls < ActiveRecord::Migration[5.0]
       t.datetime :end_time_act
       t.integer :customer_id
       t.integer :work_order_id
-      t.integer :truck_id
 
       t.timestamps
     end

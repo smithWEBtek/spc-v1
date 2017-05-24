@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ServiceCallsControllerTest < ActionDispatch::IntegrationTest
+class StaticTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

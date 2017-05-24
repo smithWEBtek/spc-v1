@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 20170420210937) do
     t.datetime "end_time_act"
     t.integer  "customer_id"
     t.integer  "work_order_id"
-    t.integer  "truck_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
