@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170420210937) do
   end
 
   create_table "imports", force: :cascade do |t|
-    t.string "name"
+    t.string "file_name"
     t.string "model"
   end
 

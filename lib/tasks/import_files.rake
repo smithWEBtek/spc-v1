@@ -1,6 +1,6 @@
-namespace :import do
+namespace :db do
   desc "Import csv files"
-  task files: :environment do 
+  task import_csv_files: :environment do 
     filename = File.join Rails.root, "./lib/assets/teachers.csv"
     CSV.foreach(filename, headers: true) do |row|
       company, about, contact, email, phone, city, state, website = row
