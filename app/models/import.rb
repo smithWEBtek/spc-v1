@@ -3,14 +3,13 @@ require 'csv'
 class Import < ApplicationRecord
 
   def import1
-    @records = Dir.glob("lib/assets/*.csv")
-    # csv_file = "./lib/assets/"+ self.file_name + ".csv"
-    @records.each do |file|
-      csv_text = File.read(file)
-      csv = CSV.parse(csv_text, :headers => true)
+    csv_filepaths_array = Dir.glob("lib/assets/*.csv")
+    csv_filepaths_array.each do |csv_file|
+      csv_file_text = File.read(csv_file)
+			model = File.basename(csv_file, ".csv").capitalize.constantize
+      csv = CSV.parse(csv_file_text, :headers => true)
       csv.each do |row|
-  binding.pry
-        file.capitalize.create!(row.to_hash)
+        model.create!(row.to_hash)
       end
     end
   end

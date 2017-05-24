@@ -12,3 +12,7 @@ namespace :db do
     end
   end
 end
+
+
+# do the heavy lifting in import.rb, and call it from this rake task
+# for each csv file in lib/assets, run import_csv 
