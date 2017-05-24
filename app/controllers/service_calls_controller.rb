@@ -6,7 +6,6 @@ class ServiceCallsController < ApplicationController
   end
 
   def show
-    @service_calls = ServiceCall.all
   end
 
   def new

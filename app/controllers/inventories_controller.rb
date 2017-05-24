@@ -6,7 +6,6 @@ class InventoriesController < ApplicationController
   end
 
   def show
-    @inventories = Inventory.all
   end
 
   def new

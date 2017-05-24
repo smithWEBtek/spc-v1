@@ -6,7 +6,6 @@ class TrucksController < ApplicationController
   end
 
   def show
-    @trucks = Truck.all
   end
 
   def new

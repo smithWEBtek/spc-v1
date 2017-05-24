@@ -6,8 +6,7 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customers = Customer.all
-  end
+	end
 
   def new
     @customer = Customer.new

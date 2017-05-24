@@ -6,7 +6,6 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @pools = Pool.all
   end
 
   def new

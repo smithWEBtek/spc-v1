@@ -1,16 +1,28 @@
-<% @customers.each do |customer| %>
-
-<%= customer.full_name1 %><br>
-  <%= customer.address %><br>
-<%= customer.city %><br>
-<%= customer.state %><br>
-<%= customer.zip %><br>
-<%= customer.phone1 %><br>
-<%= customer.phone2 %><br>
-<%= customer.email1 %><br>
-<%= customer.email2 %><br>
-<%= customer.about %><br>
-<%= customer.history %><br>
-___________________________________<br>
-
-<% end %>
+<table class="table">
+	<th>
+		<tr>
+			<td>Name</td>
+			<td>Address</td>
+			<td>City</td>
+			<td>St</td>
+			<td>Zip</td>
+			<td>Phone1</td>
+			<td>Phone2</td>
+			<td>Email1</td>
+			<td>Email2</td>
+		</tr>
+	</th>
+		<% @customers.each do |customer| %>
+	<tr>
+		<td><%= link_to customer.full_name1, customer_path(customer) %></td>
+		<td><%= customer.address %></td>
+		<td><%= customer.city %></td>
+		<td><%= customer.state %></td>
+		<td><%= customer.zip %></td>
+		<td><%= customer.phone1 %></td>
+		<td><%= customer.phone2 %></td>
+		<td><%= customer.email1 %></td>
+		<td><%= customer.email2 %></td>
+		<% end %>
+	</tr>
+</table>

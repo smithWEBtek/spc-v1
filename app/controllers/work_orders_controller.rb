@@ -6,7 +6,6 @@ class WorkOrdersController < ApplicationController
   end
 
   def show
-    @work_orders = WorkOrder.all
   end
 
   def new
