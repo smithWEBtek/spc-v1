@@ -1,16 +1,32 @@
-
-<% @inventories.each do |inventory| %>
-  <%= inventory.sku %><br>
-  <%= inventory.name %><br>
-  <%= inventory.mfg %><br>
-  <%= inventory.part_type %><br>
-  <%= inventory.model %><br>
-  <%= inventory.size %><br>
-  <%= inventory.color %><br>
-  <%= inventory.category %><br>
-  <%= inventory.sub_category %><br>
-  <%= inventory.qty %><br>
-  <%= inventory.location %><br>
-___________________________________<br>
-
-<% end %>
+<table class="table">
+	<th>
+		<tr>
+			<td>SKU</td>
+			<td>Name</td>
+			<td>Mfg</td>
+			<td>PartType</td>
+			<td>Model</td>
+			<td>Size</td>
+			<td>Color</td>
+			<td>Category</td>
+			<td>SubCategory</td>
+			<td>Qty</td>
+			<td>Location</td>
+		</tr>
+	</th>
+		<% @inventories.each do |inventory| %>
+	<tr>
+			<td><%= inventory.sku %></td>
+			<td><%= inventory.name %></td>
+			<td><%= inventory.mfg %></td>
+			<td><%= inventory.part_type %></td>
+			<td><%= inventory.model %></td>
+			<td><%= inventory.size %></td>
+			<td><%= inventory.color %></td>
+			<td><%= inventory.category %></td>
+			<td><%= inventory.sub_category %></td>
+			<td><%= inventory.qty %></td>
+			<td><%= inventory.location %></td>
+	</tr>
+		<% end %>
+</table>
