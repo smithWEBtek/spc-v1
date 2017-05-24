@@ -1,14 +1,32 @@
-<% @service_calls.each do |sc| %>
-   
-Date: <%= sc.scheduled_service_call_date %><br>
-Customer: <%= link_to sc.customer.full_name1, customer_path(sc.customer) %><br>
-<%= sc.customer.address %>, <%= sc.customer.city %>, <%= sc.customer.state %> <%= sc.customer.zip %><br>
-Phone1: <%= sc.customer.phone1 %><br>
-Phone2: <%= sc.customer.phone2 %><br>
-Email1: <%= sc.customer.email1 %><br>
-Email2: <%= sc.customer.email2 %><br>
----------------------------------<br>
-<%= sc.truck.name %><br>
-___________________________________<br>
-
-<% end %>
+<table class="table">
+	<th>
+		<tr>
+			<td>Date</td>
+			<td>Customer</td>
+			<td>Address</td>
+			<td>City</td>
+			<td>St</td>
+			<td>Phone1</td>
+			<td>Email1</td>
+			<td>WorkOrderType</td>
+			<td>DurationEst</td>
+			<td>Complaint</td>
+			<td>InventoryReq</td>
+		</tr>
+	</th>
+		<% @service_calls.each do |sc| %>
+	<tr>
+		<td><%= sc.scheduled_service_call_date %></td>
+		<td><%= link_to sc.customer.full_name1, customer_path(sc.customer) %></td>
+		<td><%= sc.customer.address %></td>
+		<td><%= sc.customer.city %></td>
+		<td><%= sc.customer.state %></td>
+		<td><%= sc.customer.phone1 %></td>
+		<td><%= sc.customer.email1 %></td>
+		<td><%= sc.work_order.work_order_type %></td>
+		<td><%= sc.work_order.duration_est %></td>
+		<td><%= sc.work_order.customer_complaint %></td>
+		<td><%= sc.work_order.inventory_req %></td>
+		<% end %>
+	</tr>
+</table>
