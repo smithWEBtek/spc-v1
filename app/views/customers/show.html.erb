@@ -2,34 +2,24 @@
 	<th>
 		<tr>
 			<td>Name</td>
-			<td>Address</td>
-			<td>City</td>
-			<td>St</td>
-			<td>Zip</td>
+			<td>FullStreetAddress</td>
 			<td>Phone1</td>
 			<td>Phone2</td>
 			<td>Email1</td>
 			<td>Email2</td>
+			<td>About</td>
+			<td>ServiceHistory</td>
 		</tr>
 	</th>
 	</tr>
 		<td><%= link_to @customer.full_name1, customer_path(@customer) %></td>
-		<td><%= @customer.address %></td>
-		<td><%= @customer.city %></td>
-		<td><%= @customer.state %></td>
-		<td><%= @customer.zip %></td>
+		<td id='geo_map'><%= link_to @customer.full_street_address %></td>
 		<td><%= @customer.phone1 %></td>
 		<td><%= @customer.phone2 %></td>
 		<td><%= @customer.email1 %></td>
 		<td><%= @customer.email2 %></td>
-	</tr>
-	<tr>
-		<td>About</td>
-		<td>ServiceHistory</td>
-	<tr>
 		<td><%= @customer.about %></td>
 		<td><%= @customer.history %></td>
-	<tr>
-
 	</tr>
 </table>
+<div id="map_show"></div>

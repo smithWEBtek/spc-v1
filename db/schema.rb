@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170420210937) do
     t.string   "first_name2"
     t.string   "last_name2"
     t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "city"
     t.string   "state"
     t.string   "zip"

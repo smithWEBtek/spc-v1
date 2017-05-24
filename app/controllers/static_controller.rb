@@ -8,4 +8,12 @@ class StaticController < ApplicationController
     render :import
   end
 
+	def get_map
+		# self.latitude
+		# self.longitude
+		# hit the GoogleMaps API
+		# get back response map
+		# render on DOM via jQuery
+	end
+
 end
