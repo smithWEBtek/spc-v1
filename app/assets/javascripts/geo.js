@@ -13,17 +13,33 @@ function initMap() {
 
 function getMapLink(){
 	$("td#geo_map").on("click", function(e){
-	$.ajax({
-		type: 'get',
-		url: '/get_map',
-		dataType: 'geocodes',
-		success: function(response){
-		for (var i = response.length - 1; i >= 0; i--) {
-			$("div#map_show").append(response[i] + "<br>");
-			}
-		}
-	});
+		$("#map_show").html("asdf")
+		
+		debugger
+	// $.ajax({
+	// 	type: 'get',
+	// 	url: '/get_map',
+	// 	dataType: 'text',
+	// 	success: function(response){
+	// 	for (var i = response.length - 1; i >= 0; i--) {
+	// 		$("div#map_show").append(response[i] + "<br>");
+	// 		}
+	// 	}
+	// });
 	e.stopImmediatePropagation();
 	e.preventDefault();
 	});
 }
+
+function initMap(lat, lng) {
+	var uluru = lat, lng;
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 4,
+		center: uluru
+	});
+	var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+	});
+}
+    

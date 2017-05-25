@@ -1,25 +1,49 @@
-<% @pools.each do |pool| %>
- 
-<%= pool.customer_id %><br>
-<%= pool.our_pool %><br>
-<%= pool.our_install_date %><br>
-<%= pool.pool_type %><br>
-<%= pool.pool_mfg %><br>
-<%= pool.pool_model %><br>
-<%= pool.pool_finish %><br>
-<%= pool.pool_size %><br>
-<%= pool.filter_type %><br>
-<%= pool.filter_mfg %><br>
-<%= pool.filter_model %><br>
-<%= pool.pump_type %><br>
-<%= pool.pump_mfg %><br>
-<%= pool.pump_model %><br>
-<%= pool.heater_type %><br>
-<%= pool.heater_mfg %><br>
-<%= pool.heater_model %><br>
-<%= pool.winter_cover_type %><br>
-<%= pool.service_history %><br>
- 
-___________________________________<br>
+<table class="table">
+	<th>
+		<tr>
+			<td>cust</td>
+			<td>ours?</td>
+			<td>install_date</td>
+			<td>type</td>
+			<td>mfg</td>
+			<td>model</td>
+			<td>finish</td>
+			<td>size</td>
+			<td>filter</td>
+			<td>mfg</td>
+			<td>model</td>
+			<td>pump</td>
+			<td>mfg</td>
+			<td>model</td>
+			<td>heater</td>
+			<td>mfg</td>
+			<td>model</td>
+			<td>cover_type</td>
+			<td>svc_history %></td>
+		</tr>
+	</th>
 
+<% @pools.each do |pool| %>
+	<tr>
+		<td><%= link_to pool.customer.full_name1, customer_path(pool.customer) %></td>
+		<td><%= pool.our_pool %></td>
+		<td><%= pool.our_install_date %></td>
+		<td><%= pool.pool_type %></td>
+		<td><%= pool.pool_mfg %></td>
+		<td><%= pool.pool_model %></td>
+		<td><%= pool.pool_finish %></td>
+		<td><%= pool.pool_size %></td>
+		<td><%= pool.filter_type %></td>
+		<td><%= pool.filter_mfg %></td>
+		<td><%= pool.filter_model %></td>
+		<td><%= pool.pump_type %></td>
+		<td><%= pool.pump_mfg %></td>
+		<td><%= pool.pump_model %></td>
+		<td><%= pool.heater_type %></td>
+		<td><%= pool.heater_mfg %></td>
+		<td><%= pool.heater_model %></td>
+		<td><%= pool.winter_cover_type %></td>
+		<td><%= pool.service_history %></td>
+	</tr>
 <% end %>
+</table>

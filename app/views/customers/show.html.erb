@@ -3,6 +3,7 @@
 		<tr>
 			<td>Name</td>
 			<td>FullStreetAddress</td>
+			<td>GEO</td>
 			<td>Phone1</td>
 			<td>Phone2</td>
 			<td>Email1</td>
@@ -13,7 +14,8 @@
 	</th>
 	</tr>
 		<td><%= link_to @customer.full_name1, customer_path(@customer) %></td>
-		<td id='geo_map'><%= link_to @customer.full_street_address %></td>
+		<td><%= @customer.full_street_address %></td>
+		<td id='geo_map'><%= @customer.latitude %>,<%= @customer.longitude %></td>
 		<td><%= @customer.phone1 %></td>
 		<td><%= @customer.phone2 %></td>
 		<td><%= @customer.email1 %></td>
@@ -22,4 +24,5 @@
 		<td><%= @customer.history %></td>
 	</tr>
 </table>
-<div id="map_show"></div>
+<%= render partial: 'customers/geomap' %>
+

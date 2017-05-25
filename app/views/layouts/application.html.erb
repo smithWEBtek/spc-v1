@@ -11,14 +11,14 @@
     <%= image_tag('http://res.cloudinary.com/smithwebtek/image/upload/c_scale,w_708/v1492730739/spc-v1/spc-background.png', style: "height: 10%; width: 100%") %>
       <div class="nav-bar">
 				<h4>
-					<%= link_to "home", root_path %> |
-					<%= link_to "customers", customers_path %> |
-					<%= link_to "pools", pools_path %> |
-					<%= link_to "trucks", trucks_path %> |
+					| <%= link_to "home", root_path %> |
 					<%= link_to "employees", employees_path %> |
+					<%= link_to "pools", pools_path %> |
+					<%= link_to "customers", customers_path %> |
+					<%= link_to "inventory", inventories_path %> |
 					<%= link_to "work orders", work_orders_path %> |
+					<%= link_to "trucks", trucks_path %> |
 					<%= link_to "service calls", service_calls_path %> |
-					<%= link_to "inventory", inventories_path %>
         </h4>
       <div class="row-fluid">
         <%= yield %>
