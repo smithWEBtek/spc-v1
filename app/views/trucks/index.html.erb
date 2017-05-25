@@ -1,10 +1,20 @@
-<% @trucks.each do |truck| %>
- 
-<%= truck.name %><br>
-<%= truck.make %><br>
-<%= truck.model %><br>
-<%= truck.year %><br>
-<%= truck.equipment %><br>
-___________________________________<br>
-
-<% end %>
+<table class="table">
+	<th>
+		<tr>
+			<td>Name</td>
+			<td>Make</td>
+			<td>Model</td>
+			<td>Year</td>
+			<td>Equipment</td>
+		</tr>
+	</th>
+		<% @trucks.each do |truck| %>
+	<tr>
+		<td><%= link_to truck.id, truck_path(truck) %></td>
+		<td><%= truck.name %></td>
+		<td><%= truck.make %></td>
+		<td><%= truck.model %></td>
+		<td><%= truck.year %></td>
+		<% end %>
+	</tr>
+</table>

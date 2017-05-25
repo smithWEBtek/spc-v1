@@ -1,6 +1,7 @@
 <table class="table">
 	<th>
 		<tr>
+			<td>ID</td>
 			<td>cust</td>
 			<td>ours?</td>
 			<td>install_date</td>
@@ -25,6 +26,7 @@
 
 <% @pools.each do |pool| %>
 	<tr>
+		<td><%= link_to pool.id, pool_path(pool) %></td>
 		<td><%= link_to pool.customer.full_name1, customer_path(pool.customer) %></td>
 		<td><%= pool.our_pool %></td>
 		<td><%= pool.our_install_date %></td>

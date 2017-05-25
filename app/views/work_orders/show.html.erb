@@ -1,0 +1,24 @@
+<table class="table">
+	<th>
+		<tr>
+			<td>ID</td>
+			<td>Date</td>
+			<td>Customer</td>
+			<td>Pool</td>
+			<td>WorkOrderType</td>
+			<td>DurationEst</td>
+			<td>Complaint</td>
+			<td>InventoryRequired</td>
+		</tr>
+	</th>
+	<tr>
+		<td><%= link_to @work_order.id, work_order_path(@work_order) %></td>
+		<td><%= @work_order.scheduled_service_call_date %></td>
+		<td><%= link_to @work_order.customer_id, customer_path(@work_order.customer) %></td>
+		<td><%= @work_order.pool_id %></td>
+		<td><%= @work_order.work_order_type %></td>
+		<td><%= @work_order.duration_est %></td>
+		<td><%= @work_order.customer_complaint %></td>
+		<td><%= @work_order.inventory_req %></td>
+	</tr>
+</table>

@@ -2,10 +2,11 @@ class TrucksController < ApplicationController
   before_action :set_truck, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trucks = Truck.all 
+    @trucks = Truck.all
   end
 
   def show
+		@service_calls = @truck.service_calls
   end
 
   def new

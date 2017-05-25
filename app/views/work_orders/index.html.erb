@@ -12,6 +12,7 @@
 	</th>
 		<% @work_orders.each do |work_order| %>
 	<tr>
+		<td><%= link_to work_order.id, work_order_path(work_order) %></td>
 		<td><%= work_order.scheduled_service_call_date %></td>
 		<td><%= link_to work_order.customer_id, customer_path(work_order.customer) %></td>
 		<td><%= work_order.pool_id %></td>

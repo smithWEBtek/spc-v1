@@ -1,0 +1,34 @@
+<table class="table">
+	<th>
+		<tr>
+			<td>SvcCall_ID</td>
+			<td>WorkOrderID</td>
+			<td>WorkOrderType</td>
+			<td>Date</td>
+			<td>Customer</td>
+			<td>Address</td>
+			<td>City</td>
+			<td>St</td>
+			<td>Phone1</td>
+			<td>Email1</td>
+			<td>DurationEst</td>
+			<td>Complaint</td>
+			<td>InventoryReq</td>
+		</tr>
+	</th>
+	<tr>
+		<td><%= link_to @service_call.id, service_call_path(@service_call) %></td>
+		<td><%= link_to @service_call.work_order.id, work_order_path(@service_call.work_order) %></td>
+		<td><%= @service_call.work_order.work_order_type %></td>
+		<td><%= @service_call.scheduled_service_call_date %></td>
+		<td><%= link_to @service_call.customer.full_name1, customer_path(@service_call.customer) %></td>
+		<td><%= @service_call.customer.address %></td>
+		<td><%= @service_call.customer.city %></td>
+		<td><%= @service_call.customer.state %></td>
+		<td><%= @service_call.customer.phone1 %></td>
+		<td><%= @service_call.customer.email1 %></td>
+		<td><%= @service_call.work_order.duration_est %></td>
+		<td><%= @service_call.work_order.customer_complaint %></td>
+		<td><%= @service_call.work_order.inventory_req %></td>
+	</tr>
+</table>

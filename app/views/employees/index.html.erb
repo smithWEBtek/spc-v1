@@ -1,12 +1,18 @@
-<% @employees.each do |employee| %>
-
-<%= employee.full_name %><br>
-  
-<%= employee.phone %><br>
- 
-<%= employee.email %><br>
- 
-<%= employee.title %><br>
-___________________________________<br>
-
-<% end %>
+<table class="table">
+	<th>
+		<tr>
+			<td>full_name</td>
+			<td>phone</td>
+			<td>email</td>
+			<td>title</td>
+		</tr>
+	</th>
+	<% @employees.each do |employee| %>
+	<tr>
+		<td><%= link_to employee.full_name, employee_path(employee) %></td>
+		<td><%= employee.phone %></td>
+		<td><%= employee.email %></td>
+		<td><%= employee.title %></td>
+		<% end %>
+	</tr>
+</table>

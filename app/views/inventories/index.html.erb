@@ -16,7 +16,7 @@
 	</th>
 		<% @inventories.each do |inventory| %>
 	<tr>
-			<td><%= inventory.sku %></td>
+			<td><%= link_to inventory.sku, inventory_path(inventory) %></td>
 			<td><%= inventory.name %></td>
 			<td><%= inventory.mfg %></td>
 			<td><%= inventory.part_type %></td>
