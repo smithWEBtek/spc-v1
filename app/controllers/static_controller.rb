@@ -8,7 +8,7 @@ class StaticController < ApplicationController
     render :import
   end
 
-	def get_map
+	def get_map(lat,long)
 		# self.latitude
 		# self.longitude
 		# hit the GoogleMaps API
