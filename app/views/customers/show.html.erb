@@ -1,4 +1,4 @@
-<h3>Individual Customer</h3>
+<h3>Customer: <%= @customer.full_name1 %></h3>
 
 <table class="table">
 	<th>
@@ -26,5 +26,9 @@
 		<td><%= @customer.history %></td>
 	</tr>
 </table>
+
+
+<h3>Service History:</h3>
+<%= render partial: 'customers/service_calls', locals: { service_calls: @customer.service_calls } %>
 <%= render partial: 'customers/geomap' %>
 
