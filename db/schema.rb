@@ -103,15 +103,15 @@ ActiveRecord::Schema.define(version: 20170420210937) do
   end
 
   create_table "service_calls", force: :cascade do |t|
-    t.date     "scheduled_service_call_date"
+    t.date     "actual_service_call_date"
     t.datetime "start_time_est"
     t.datetime "start_time_act"
     t.datetime "end_time_est"
     t.datetime "end_time_act"
     t.integer  "customer_id"
     t.integer  "work_order_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "truck_service_calls", force: :cascade do |t|
