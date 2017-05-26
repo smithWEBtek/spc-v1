@@ -1,0 +1,38 @@
+<h3><%= @truck.name %>'s Service Calls</h3>
+
+<table class="table">
+	<th>
+		<tr>
+			<td>ID</td>
+			<td>WorkOrderID</td>
+			<td>WorkOrderType</td>
+			<td>Date</td>
+			<td>Customer</td>
+			<td>Address</td>
+			<td>City</td>
+			<td>St</td>
+			<td>Phone1</td>
+			<td>Email1</td>
+			<td>DurationEst</td>
+			<td>Complaint</td>
+			<td>InventoryReq</td>
+		</tr>
+	</th>
+		<% service_calls.each do |sc| %>
+	<tr>
+		<td><%= link_to sc.id, service_call_path(sc) %></td>
+		<td><%= link_to sc.work_order.id, work_order_path(sc.work_order) %></td>
+		<td><%= sc.work_order.work_order_type %></td>
+		<td><%= sc.scheduled_service_call_date %></td>
+		<td><%= link_to sc.customer.full_name1, customer_path(sc.customer) %></td>
+		<td><%= sc.customer.address %></td>
+		<td><%= sc.customer.city %></td>
+		<td><%= sc.customer.state %></td>
+		<td><%= sc.customer.phone1 %></td>
+		<td><%= sc.customer.email1 %></td>
+		<td><%= sc.work_order.duration_est %></td>
+		<td><%= sc.work_order.customer_complaint %></td>
+		<td><%= sc.work_order.inventory_req %></td>
+		<% end %>
+	</tr>
+</table>
