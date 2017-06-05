@@ -1,4 +1,44 @@
 <h1>Swimming Pool Center</h1>
 <p>Application to manage onsite customer service for pool service company with 2 locations and 7 trucks delivering onsite service daily.</p>
 
+Docs: 
+<a href="http://res.cloudinary.com/smithwebtek/image/upload/v1496694466/spc-v1/spc-docs.pdf">SPC Work Orders</a> <br><br>
+<img src="notes.md">Notes</a>
+
 <%= link_to image_tag("http://res.cloudinary.com/smithwebtek/image/upload/c_scale,w_584/v1496691345/spc-v1/spc-data-model.jpg"), "http://res.cloudinary.com/smithwebtek/image/upload/v1496694464/spc-v1/spc-erd.pdf" %>
+
+
+<h3>2017-06-05	questions for pool service app:</h3>
+<br><br>
+<h4>existing solutions(?)</h4>
+<h4>biggest pain</h4>
+<h4>lifecycle of a work order</h4>
+<h4>office process</h4>
+<h4>existing database sample</h4>
+<br><br>
+
+<h4>inventory on trucks</h4>
+<h5>describe when/how trucks are loaded with inventory, parts and tools</h5>
+<h5>how is inventory tracked</h5>
+<h5>daily with stickers on work_orders as steps are completed</h5>
+<h5>work_order with stickers data is entered into back office system</h5>
+<h5>inventory is updated</h5>
+<h5>truck_inventory is updated to show parts used(?)</h5>
+<br><br>
+
+<h4>inventory in stores</h4>
+<h5>how is it tracked</h5>
+<h5>where are records of inventory and transfers between stores</h5>
+<h5>how does a store's inventory interact with truck's inventory?</h5>
+<br><br>
+
+<h4>truck</h4>
+<h5>how is work capacity calculated for the day / week</h5>
+<h5>are work durations predictable to some degree?</h5>
+<h5>assign 'estimated work duration' to work_order</h5>
+<h5>truck is then filled to capacity based on total amt of 'work_duration' in assigned work_orders</h5>
+<br><br>
+<h4>removable labels</h4>
+<h5>how/when are these updated in backoffice system</h5>
+<h5>history, service notes</h5>
+<h5>track by pool, customer, truck, employee</h5>
