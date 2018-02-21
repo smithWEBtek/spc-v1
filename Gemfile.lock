@@ -252,7 +252,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   watir
   web-console (>= 3.3.0)
-  yajl-ruby
+  yajl-ruby (< 1.3.1)
   yaml_db
 
 BUNDLED WITH
