@@ -4,7 +4,11 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+ruby '2.6.6'
+
 gem 'yajl-ruby', '< 1.3.1'
+gem 'psych', '~> 2.2.1'
 gem 'yaml_db'
 gem 'rails-erd'
 gem 'pdf-reader'
