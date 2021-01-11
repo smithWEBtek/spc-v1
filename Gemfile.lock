@@ -184,7 +184,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redcarpet (3.2.3)
+    redcarpet (3.5.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -276,7 +276,7 @@ DEPENDENCIES
   pygments.rb (~> 0.6.0)
   rails (= 5.0.6)
   rails-erd
-  redcarpet (~> 3.2.2)
+  redcarpet (~> 3.5.1)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
